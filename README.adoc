@@ -1,0 +1,89 @@
+= skainet jupyter
+
+[.lead]
+Empower your deep machine learning data science workflows with Kotlin's type safety and expressiveness in Jupyter notebooks.
+
+== Overview
+
+*skainet* is an open-source deep learning framework written in Kotlin, designed with developers in mind to enable the creation of modern AI-powered applications with ease. It seamlessly integrates with Jupyter notebooks, providing a powerful environment for interactive data analysis, machine learning experimentation, and model development.
+
+== Features
+
+* Full Kotlin language support in Jupyter notebooks
+* Interactive data visualization capabilities
+* Seamless integration with popular ML libraries
+* Type-safe data manipulation
+* Rich markdown and documentation support
+
+== Using with Jupyter Notebook
+
+=== Option 1: IntelliJ IDEA
+
+You can create Kotlin notebooks directly in IntelliJ IDEA using one of these methods:
+
+1. *Within a Project*:
+* Right-click on source root/folder in Project view
+* Select `New` → `Kotlin Notebook`
+
+2. *Scratch Notebook*:
+* Press kbd:[Cmd+Shift+N] (macOS) or kbd:[Ctrl+Alt+Shift+Insert] (Windows/Linux)
+* Select `Kotlin Notebook`
+
+3. *From Welcome Screen*:
+* Navigate to `Kotlin Notebooks` tab
+* Click `New Notebook`
+
+=== Option 2: Jupyter Installation
+
+1. *Install Jupyter and Kotlin Kernel*:
++
+[source,bash]
+----
+$ pip install jupyter
+$ jupyter kernelspec install kotlin
+----
+
+2. *Create a New Notebook*:
++
+- Launch Jupyter: `jupyter notebook`
+- Select "New" → "Kotlin"
+
+3. *Basic Usage*:
++
+[source,kotlin]
+----
+// Import skainet libraries
+import ai.tribit.skainet.*
+
+// Example code
+val data = DataFrame.readCsv("data.csv")
+data.head(5).show()
+----
+
+Here’s a concise instruction snippet for setting up dependencies in Gradle KTS to consume your open-source project:
+
+== Usage:
+
+1. **Configure repository**  
+   Add the following to your project's `build.gradle.kts`:
+
+```kotlin
+repositories {
+    maven {
+        url = uri("https://maven.pkg.github.com/sk-ai-net/skainet")
+        credentials {
+            username = providers.gradleProperty("gpr.user")
+                .orElse(System.getenv("GITHUB_ACTOR"))
+                .get()
+            password = providers.gradleProperty("gpr.token")
+                .orElse(System.getenv("GITHUB_TOKEN"))
+                .get()
+        }
+    }
+}
+```
+
+2. **Set GitHub credentials**  
+Ensure you provide your GitHub username (`gpr.user`) and a personal access token (`gpr.token`) with package read permission.
+
+https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry[See the official GitHub docs for more details]
