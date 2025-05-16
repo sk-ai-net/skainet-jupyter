@@ -1,0 +1,45 @@
+= Releasing
+
+. Update the `VERSION_NAME` in `gradle.properties` to the release version.
+
+. Update the `CHANGELOG.md`:
+
+.. Change the `Unreleased` header to the release version.
+.. Add a link URL to ensure the header link works.
+.. Add a new `Unreleased` section to the top.
+. Update the `README.md` so the "Download" section reflects the new release version and the
+ snapshot section reflects the next "SNAPSHOT" version.
+
+. Commit
+
+`
+   $ git commit -am "Prepare version X.Y.X"
+`
+
+. Publish
+
+----
+$ ./gradlew clean publish
+----
+
+If this step fails, drop the Sonatype repo, fix, commit, and publish again.
+
+. Tag
+
+`
+   $ git tag -am "Version X.Y.Z" X.Y.Z
+`
+
+. Update the `VERSION_NAME` in `gradle.properties` to the next "SNAPSHOT" version.
+
+. Commit
+
+`
+   $ git commit -am "Prepare next development version"
+`
+
+. Push!
+
+`
+   $ git push && git push --tags
+`
