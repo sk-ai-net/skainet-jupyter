@@ -11,5 +11,3 @@ skainet-io = { module = "sk.ai.net:io", version.ref = "skainet" }
 [plugins]
 jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 johnrengelman-shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
-
-vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.32.0" }
