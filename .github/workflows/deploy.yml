@@ -47,7 +47,7 @@ jobs:
         uses: gradle/actions/setup-gradle@8379f6a1328ee0e06e2bb424dadb7b159856a326 # v4.4.0
 
       - name: Publish package
-        run: ./gradlew publishAllPublicationsToGithubPackagesRepository
+        run: ./gradlew :kotlin-jupyter:publishAllPublicationsToGithubPackagesRepository
         env:
           ORG_GRADLE_PROJECT_githubPackagesUsername: ${{ github.actor }}
           ORG_GRADLE_PROJECT_githubPackagesPassword: ${{ secrets.GITHUB_TOKEN }}
