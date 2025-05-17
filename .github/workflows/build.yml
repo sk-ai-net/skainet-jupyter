@@ -1,4 +1,4 @@
-name: Build Feature Branch Apk
+name: Build Feature Branch artifact
 
 on: [ push, pull_request ]
 

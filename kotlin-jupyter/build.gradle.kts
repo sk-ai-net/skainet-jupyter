@@ -72,7 +72,7 @@ publishing {
     repositories {
         maven {
             name = "githubPackages"
-            url = uri("https://maven.pkg.github.com/sk-ai-net/skainet")
+            url = uri("https://maven.pkg.github.com/sk-ai-net/skainet-jupyter")
             credentials {
                 credentials(PasswordCredentials::class)
             }
