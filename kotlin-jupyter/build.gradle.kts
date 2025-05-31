@@ -6,6 +6,10 @@ plugins {
 
 dependencies {
     implementation(libs.skainet.core)
+    implementation(libs.skainet.io)
+    implementation(libs.skainet.modelZoo)
+    implementation(libs.skainet.gguf)
+
 }
 
 tasks.test {
