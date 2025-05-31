@@ -41,7 +41,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "sk.ai.net"
             artifactId = "kotlin-jupyter"
-            version = "0.0.6-SNAPSHOT"
+            version = "0.0.6.1"
 
             // Use only the shadow jar
             artifact(tasks.shadowJar.get()) {
