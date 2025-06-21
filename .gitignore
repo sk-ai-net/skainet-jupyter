@@ -4,6 +4,10 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 .kotlin
 
+## skainet zoo
+*ubyte
+*gz
+
 ## antora
 _public
 .cache

@@ -4,5 +4,5 @@ plugins {
 
 allprojects {
     group = "sk.ai.net.jupyter"
-    version = "0.0.6.1"
+    version = "0.0.7"
 }
