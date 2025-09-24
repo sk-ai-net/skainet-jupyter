@@ -1,0 +1,16 @@
+[versions]
+kotlin = "1.9.23"
+shadow = "8.1.1"
+skainet = "0.0.7"
+
+
+[libraries]
+skainet-core = { module = "sk.ai.net:core", version.ref = "skainet" }
+skainet-io = { module = "sk.ai.net:io", version.ref = "skainet" }
+skainet-modelZoo = { module = "sk.ai.net:model-zoo", version.ref = "skainet" }
+skainet-gguf = { module = "sk.ai.net:gguf", version.ref = "skainet" }
+
+
+[plugins]
+jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+johnrengelman-shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
