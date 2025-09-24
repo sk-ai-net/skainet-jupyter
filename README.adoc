@@ -102,7 +102,7 @@ cd ../skainet-jupyter-gh
 
 == Consuming from Kotlin Notebook
 
-Since we have publishing skainet wrapper for Kotlin Notebook into local maven repository, we can now consume by adding depenednecy on the library from localMaven like follows:
+Since we have publishing skainet wrapper for Kotlin Notebook into local maven repository, we can now consume by adding dependency on the library from localMaven like follows:
 
 [source, kotlin]
 ----
@@ -111,7 +111,7 @@ USE {
         mavenLocal()
     }
     dependencies {
-        implementation("sk.ainet:skainet-notebook:0.0.1")
+        implementation("sk.ainet:kotlin-notebook:0.0.1")
     }
 }
 ----

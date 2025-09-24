@@ -32,7 +32,7 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = "sk.ainet"
-            artifactId = "skainet-notebook"
+            artifactId = "kotlin-notebook"
             version = "0.0.1"
 
             // Use only the shadow jar
@@ -40,7 +40,7 @@ publishing {
                 classifier = null
             }
             pom {
-                description.set("skainet-notebook")
+                description.set("kotlin-notebook")
                 name.set(project.name)
                 url.set("https://github.com/sk-ai-net/skainet-jupyter/")
                 licenses {
