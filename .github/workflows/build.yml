@@ -2,6 +2,9 @@ name: Build Feature Branch Apk
 
 on: [ push, pull_request ]
 
+env:
+  SKAINET_COMMIT: 6f61c63
+
 jobs:
   build-job:
     runs-on: ubuntu-latest # enables hardware acceleration in the virtual machine
@@ -20,6 +23,12 @@ jobs:
           distribution: 'zulu'
           java-version: 17
 
+      - name: Clone and build skainet dependency
+        run: |
+          git clone https://github.com/sk-ai-net/skainet.git
+          cd skainet
+          git checkout ${{ env.SKAINET_COMMIT }}
+          ./gradlew publishToMavenLocal
 
       - name: Print git commit variables
         run: |

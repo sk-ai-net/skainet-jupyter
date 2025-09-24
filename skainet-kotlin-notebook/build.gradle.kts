@@ -32,7 +32,7 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = "sk.ainet"
-            artifactId = "kotlin-notebook"
+            artifactId = "skainet-notebook"
             version = "0.0.1"
 
             // Use only the shadow jar

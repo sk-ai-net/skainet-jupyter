@@ -1,19 +1,24 @@
-= skainet jupyter
+= 🚀 skainet-jupyter: Kotlin-Powered Deep Learning in Jupyter
 
 [.lead]
-Empower your deep machine learning data science workflows with Kotlin's type safety and expressiveness in Jupyter notebooks.
+*Experience the future of machine learning development* with Kotlin's type safety, performance, and expressiveness in interactive Jupyter notebooks. Build neural networks, train models, and experiment with AI using a modern, statically-typed language.
 
-== Overview
+== 🎯 What is skainet-notebook?
 
-*skainet* is an open-source deep learning framework written in Kotlin, designed with developers in mind to enable the creation of modern AI-powered applications with ease. It seamlessly integrates with Jupyter notebooks, providing a powerful environment for interactive data analysis, machine learning experimentation, and model development.
+*skainet-jupyter* brings the power of the *skainet* deep learning framework to Jupyter notebooks, combining Kotlin's developer-friendly features with interactive data science workflows. Whether you're prototyping neural networks, analyzing datasets, or building production-ready ML models, this project provides a robust foundation for AI development.
 
-== Features
+== ✨ Current Status & Capabilities
 
-* Full Kotlin language support in Jupyter notebooks
-* Interactive data visualization capabilities
-* Seamless integration with popular ML libraries
-* Type-safe data manipulation
-* Rich markdown and documentation support
+🟢 *Active Development* - This project is actively maintained and growing
+
+=== 🧠 Neural Networks & Deep Learning
+* ✅ **Multi-Layer Perceptrons (MLP)** - Fully functional feed-forward networks
+
+=== 💻 Developer Experience  
+* ✅ **Type-Safe ML Code** - Kotlin's compile-time safety prevents runtime errors
+* ✅ **Interactive Development** - Real-time experimentation in Jupyter notebooks
+* ✅ **IntelliJ IDEA Integration** - First-class IDE support with debugging
+* ✅ **Rich Documentation** - Comprehensive examples and tutorials
 
 == Using with Jupyter Notebook
 
@@ -52,38 +57,61 @@ $ jupyter kernelspec install kotlin
 +
 [source,kotlin]
 ----
-// Import skainet libraries
-import ai.tribit.skainet.*
-
 // Example code
 val data = DataFrame.readCsv("data.csv")
 data.head(5).show()
 ----
 
-Here’s a concise instruction snippet for setting up dependencies in Gradle KTS to consume your open-source project:
 
-== Usage:
+== Local Development Setup
 
-1. **Configure repository**  
-   Add the following to your project's `build.gradle.kts`:
+To build and run the jupyter notebooks locally, you need to first build and publish the skainet library dependency to your local Maven repository.
 
-```kotlin
-repositories {
-    maven {
-        url = uri("https://maven.pkg.github.com/sk-ai-net/skainet")
-        credentials {
-            username = providers.gradleProperty("gpr.user")
-                .orElse(System.getenv("GITHUB_ACTOR"))
-                .get()
-            password = providers.gradleProperty("gpr.token")
-                .orElse(System.getenv("GITHUB_TOKEN"))
-                .get()
-        }
+=== Prerequisites
+
+* JDK 17 or higher
+* Git
+
+=== Building skainet Library Locally
+
+1. **Clone the skainet repository**:
++
+[source,bash]
+----
+git clone https://github.com/sk-ai-net/skainet.git
+cd skainet
+# Checkout specific working commit (WIP)
+git checkout 6f61c63
+----
+
+2. **Build and publish to Maven local**:
++
+[source,bash]
+----
+./gradlew publishToMavenLocal
+----
+
+3. **Navigate back to this project and build**:
++
+[source,bash]
+----
+cd ../skainet-jupyter-gh
+./gradlew publishToMavenLocal
+----
+
+
+== Consuming from Kotlin Notebook
+
+Since we have publishing skainet wrapper for Kotlin Notebook into local maven repository, we can now consume by adding depenednecy on the library from localMaven like follows:
+
+[source, kotlin]
+----
+USE {
+    repositories {
+        mavenLocal()
+    }
+    dependencies {
+        implementation("sk.ainet:skainet-notebook:0.0.1")
     }
 }
-```
-
-2. **Set GitHub credentials**  
-Ensure you provide your GitHub username (`gpr.user`) and a personal access token (`gpr.token`) with package read permission.
-
-https://docs.github.com/packages/working-with-a-github-packages-registry/working-with-the-gradle-registry[See the official GitHub docs for more details]
+----
