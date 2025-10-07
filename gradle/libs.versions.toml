@@ -1,18 +1,17 @@
 [versions]
 kotlin = "2.2.10"
 shadow = "8.1.1"
-skainet = "0.0.1"
+skainet = "0.0.9"
 
 
 [libraries]
-skainet-api = { module = "sk.ainet.core:tensors-api", version.ref = "skainet" }
-skainet-core = { module = "sk.ainet.core:tensors-core", version.ref = "skainet" }
-skainet-nn = { module = "sk.ainet.core:nn-api", version.ref = "skainet" }
+skainet-lang-api = { module = "sk.ainet.core:skainet-lang-api", version.ref = "skainet" }
+skainet-lang-memory = { module = "sk.ainet.core:skainet-lang-memory", version.ref = "skainet" }
 
 
 
-skainet-modelZoo = { module = "sk.ai.net:model-zoo", version.ref = "skainet" }
-skainet-gguf = { module = "sk.ai.net:gguf", version.ref = "skainet" }
+#//skainet-modelZoo = { module = "sk.ai.net:model-zoo", version.ref = "skainet" }
+#skainet-gguf = { module = "sk.ai.net:gguf", version.ref = "skainet" }
 
 
 [plugins]

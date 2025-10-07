@@ -5,9 +5,8 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.skainet.api)
-    implementation(libs.skainet.core)
-    implementation(libs.skainet.nn)
+    implementation(libs.skainet.lang.api)
+    implementation(libs.skainet.lang.memory)
 }
 
 tasks.test {
@@ -32,7 +31,7 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = "sk.ainet"
-            artifactId = "kotlin-jupyter"
+            artifactId = "kotlin-notebook"
             version = "0.0.1"
 
             // Use only the shadow jar
@@ -40,7 +39,7 @@ publishing {
                 classifier = null
             }
             pom {
-                description.set("skainet-jupyter")
+                description.set("skainet-notebook")
                 name.set(project.name)
                 url.set("https://github.com/sk-ai-net/skainet-jupyter/")
                 licenses {

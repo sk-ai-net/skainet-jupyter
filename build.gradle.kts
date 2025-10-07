@@ -3,6 +3,6 @@ plugins {
 }
 
 allprojects {
-    group = "sk.ai.net.jupyter"
+    group = "sk.ainet"
     version = "0.0.1"
 }

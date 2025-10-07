@@ -10,10 +10,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        mavenLocal()
     }
 }
 
-rootProject.name = "skainet-jupyter"
+rootProject.name = "skainet-kotlin-notebook"
 
-include("kotlin-jupyter")
+include("kotlin-notebook")
